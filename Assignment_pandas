@@ -1,0 +1,95 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb  8 00:53:07 2017
+
+@author: Prafull
+"""
+#Create two dataframe and Perform all join Operation, Concatenation and Append df1 to df4
+import pandas as pd
+import numpy as np
+
+df1=pd.DataFrame({'A':['A0','A1','A2','A3'],'B':['B0','B1','B2','B3'],'C':['C0','C1','C2','C3'],'D':['D0','D1','D2','D3'],},index=[0,1,2,3])
+df4=pd.DataFrame({'B':['B2','B3','B6','B7'],'D':['D2','D3','D6','D7'],'F':['F2','F3','F6','F7']},index=[2,3,6,7])
+merged=pd.merge(df1,df4,on='D',how='inner')
+merged.set_index('D',inplace=True)
+lj=pd.merge(df1,df4,on='D',how='left')
+rj=pd.merge(df1,df4,on='D',how='right')
+pd.concat(df1,df4)
+frames=[df1,df4]
+result=pd.concat(frames)
+result1 = pd.concat([df1, df4], axis=1)
+
+result2 = pd.concat([df1, df4], axis=1, join='inner')
+
+result3 = pd.concat([df1, df4], axis=1, join='outer')
+
+df = df1.append(df4,ignore_index=True)
+df
+
+#%%
+#2Write a function that returns the cumulative sum of numbers in a list. For example, if the function is given the list [1,2,3,4,5], it should return the list [ 1, 3, 6, 10, 15].
+a = [1,2,3,4,5]
+
+def cum_sum_f(lis1):
+    total = 0
+    for x in lis1:
+        total += x
+        yield total
+        
+list(cum_sum_f(a))
+#%%
+
+
+#4. Rewrite f = lambda x: x**2 as a regular function also called f using def.
+def regfun(x):
+     return x**2
+regfun(2)     
+
+
+#%% Find the second largest number in this list 
+
+lis2= [9,61,2,79,58,87,68,83,61,13]               
+list.sort(lis2, reverse=True)
+lis2[1]
+
+#%% 5
+a=np.arange(1,101,1).reshape(10,10)
+a
+#%%
+a.shape
+
+np.apply_over_axes((np.average),a,0)
+
+a[4,:]
+
+#%%
+np.log(a)
+#%%
+np.cumsum(a)
+#%%
+np.rank(a)
+np.power(a,2)
+
+#%%
+
+df=pd.read_csv("/Users/Prafull/Desktop/Prafulla/Aegis/Python/train.csv")
+df
+df.describe()
+df.cov()
+df.corr()
+
+df.apply(lambda x : sum(x.isnull()),axis=0) #Finding Null Values
+
+df['Age'].fillna(df['Age'].mean(),inplace=True)
+df['Embarked'].fillna(df['Embarked'].mean(),inplace=True)         
+df['Embarked'].value_counts()
+df['Embarked'].fillna('S',inplace=True)
+
+df.drop('Name',axis=1)
+df.drop('Sex',axis=1)
+df.drop('Ticket',axis=1)
+df.drop('Cabin',axis=1)
+df.drop('PassengerId',axis=1)
+
+#%%

@@ -1,0 +1,488 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 10 10:17:09 2017
+
+@author: Prafull
+"""
+
+print ("Hello \"World")
+print ('Hello World')
+print ("Hello, 'My Dear Friend'")
+print ('Hello, "My Dear Friend"')
+print ("One", "Two")
+
+
+print("""
+One - Hello
+two - Python
+three - Data Science
+""")
+
+print ("One", "Two", 'One-1', 'Two-2')
+
+print ("I am first line\nI am second line")
+
+print("Hello to Data Science\n""This is:\n\n""-Python Course\n""-Actually This is Data science Course")
+
+#!/usr/bin/python3
+
+#this is a comment in Python
+
+print ("Hello World") #This is also a comment in Python
+
+""" This is an example of a multiline
+comment that spans multiple lines
+...
+"""
+
+print ("Let me try triple quotes")
+'''
+I am also comment
+in muliple lines
+'''
+
+
+#!/usr/bin/python3
+# Addition and subtraction
+print(5 + 5)
+print(5 - 5)
+
+# Multiplication and division
+print(3 * 5)
+print(10 / 2)
+
+# Exponentiation
+print(4 ** 2)
+
+# Modulo
+print(18 % 7)
+
+#Assignment 2
+
+1000*(1.1**5)
+round(1000*(1.1**5))
+
+#variables
+counter = 1000              # An integer assignment
+miles   = 1050.0            # A floating point
+name    = "Hari Sadu"       # A string
+
+print (counter)
+print (miles)
+print (name)
+
+a = b = c = 1
+
+print (a)
+print (b)
+print (c)
+
+a, b, c = 1, 2, "john"
+
+print (a)
+print (b)
+print (c)
+
+#BMI - Body Mass Index = weight/(height)^2
+weight = 61.0
+height = 1.79
+bmi = weight / height ** 2
+
+print (bmi)
+print (type(bmi))
+
+#Assignment 3
+
+savings=1000
+interest=1.10
+earnings=savings*interest**8
+round(earnings)
+
+#if demo
+
+# If the number is positive, we print an appropriate message
+
+num = 3
+if num > 0:
+    print(num, "is a positive number.")
+print("This is always printed.")
+
+num = -1
+if num > 0:
+    print(num, "is a positive number.")
+print("This is also always printed.")
+
+#if else
+# Program checks if the number is positive or negative
+# And displays an appropriate message
+
+num = -3
+
+# Try these two variations as well. 
+# num = -5
+# num = 0
+
+if num >= 0:
+    print("Positive or Zero")
+else:
+    print("Negative number")
+
+#elif
+num = 3.4
+
+# Try these two variations as well:
+# num = 0
+# num = -4.5
+
+if num > 0:
+    print("Positive number")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negative number")
+
+#String    
+str = '  Hello World!'
+print(str[8:10])
+print (str)          # Prints complete string
+print (str[0])       # Prints first character of the string
+print (str[2:5])     # Prints characters starting from 3rd to 5th
+print (str[2:])      # Prints string starting from 3rd character
+print (str * 2)      # Prints string two times
+print (str + "TEST") # Prints concatenated string
+
+s = 'Hello World'
+print (len(s))
+print (type(s))
+
+s = 'Monty Python'
+
+print(s[6:10])
+print(s[-12:-7])
+print r"\nhello"
+print "\x97\x98"
+
+str="helloworld"
+str[::-1]
+
+
+print("xdereyyyreyyyyretetwwyyyxxxyy".count("yy"))
+print("xdereyyyreyyyyretetwwyyyxxxyy".count("yy",12))
+str
+
+#list
+list     = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+tinylist = [123, 'john']
+print (list )             # Prints complete list
+print (list[0]  )         # Prints first element of the list
+print (list[1:3] )        # Prints elements starting from 2nd till 3rd 
+print (list[2:] )         # Prints elements starting from 3rd element
+print (tinylist * 2 )     # Prints list two times
+print (list + tinylist )  # Prints concatenated lists
+
+print (type(list))        # type
+print(len(list))          # length 
+
+
+#For loop
+languages = ["C", "Java", "Perl", "Python", "Node.js", "JavaScript"]
+
+for x in languages: 
+     print (x)
+for i in range(len(languages)):
+     print(languages[i])
+     
+for i in range(len(languages)):
+     if i=='Perl':
+          print (languages[i])
+     
+
+range(10)
+
+
+edibles = ["ham", "spam","eggs","nuts"]
+for food in edibles:
+    if food == "spam":
+        print("No more spam please!")
+        break
+    print("Great, delicious " + food)
+print("Finally, I finished stuffing myself")
+
+
+#assignment 4
+l=[0,1,2,3,4,5,4,3,2,1,0]
+s="*"
+for i in l:
+     print(s*i)
+
+for i in range(6):
+     print('*'*i)
+for i in range(5)[::-1]:
+     print('*'*i)
+     
+#while
+
+count = 0
+while (count < 9):
+   print ('The count is:', count)
+   count = count + 1
+
+print ("Good bye!")
+
+#assignment -5 
+odd=0
+even=0
+for i in range(50):
+     if(i%2==0):
+          even=even+1
+     else:
+          odd=odd+1
+print("even numbers are:\n",even,"odd numbers are:",odd)
+
+l=range(50)
+rr=l[::2]
+rr
+
+divby3=l[::3]
+divby3
+
+rrr=l[6:30:3]
+rrr
+
+l=['one','two','three',2,3]
+
+for i, item in enumerate(l):
+     print(i,item)
+qq=l.sort()
+print qq
+print l
+l.sort()
+sorted(l)
+#Assignment -6
+
+# Develop a list of lists. The element of list should be factors of index of list
+mlist = []
+ilist = []
+for i in range(1,7):
+      for j in range(1,i+1):
+          if i%j == 0:
+              ilist.append(j)
+      mlist.extend([ilist])
+      ilist = []
+mlist
+# WAP for HCF
+
+#Function
+name = "Aegis"
+
+def hellofunction(name=None):
+    '''hello function'''
+    if name:
+       print ("Hello " + name )
+    else: 
+      print ("Hello World!")
+
+hellofunction(name)
+hellofunction()
+
+def decToBin(n):
+    if n==0: 
+         return '0'
+    else:
+         return decToBin(int(n/2)) + str(n%2)
+
+d = decToBin(11)
+
+print (d)
+
+
+#importing module
+
+from hello_module import goodbye
+
+print ("------I")
+print (goodbye)
+
+print ("------II")
+goodbye()
+
+#catch error
+def div(m,n):
+     try:
+          return m/n
+     except:
+          print("chutiya 0 se divide kon karta hai be")
+x=div(5,2)     
+print x
+
+x=div(5,0)     
+print x
+
+while True:
+     age=int(input("Your age please:"))
+     if(age>21):
+          print("bada hogaya bhosadike")
+     else:
+          print("abhi ande me hi hai")          
+          
+          
+          
+import sys
+
+randomList = ['a', 0, 2]
+
+for entry in randomList:
+    try:
+        print("The entry is", entry)
+        r = 1/float(entry)
+        break
+    except:
+        print("Oops!",sys.exc_info()[0],"occured.")
+        print("Next entry.")
+        print()
+print("The reciprocal of",entry,"is",r)
+   
+#Dictionary
+d1 = {}
+print ("----------I")
+print (type(d1))
+
+d2 = {'one': 1, 'two':2}
+print ("----------II")
+print (d2)
+print ("----------III")
+print (type(d2))
+
+d3 = dict(one=2, three=4)
+print ("----------IV")
+print (d3)
+print (type(d3))
+
+d4 = dict([(1, 2), (3, 4)])
+print ("----------V")
+print (d4)
+
+d5 = dict({1:2, 3:4})
+print ("----------V")
+print (d5)
+
+d1={'India':'Delhi','Pakistan':'Islamabad','Japan':'Tokiyo'}
+print d1
+
+for i,j in d1.items():
+     print(i,j)
+     
+A=[1,2,4,5,6,6,6,6,7,1,2]
+d={}
+
+for element in A:
+     d[element]=1
+print(d)
+
+tmp=d.keys()
+B=[]
+for e in tmp:
+     B.append(e)
+print (B)     
+     
+
+
+
+squares=[]
+for x in range(10):
+     sq=x**2
+     squares.append(sq)
+print squares
+
+
+new_style=[x**2 for x in range(10)]
+print new_style
+           
+mult=lambda x,y:x*y
+
+
+import numpy as np
+# This is 2012 Olympics Game 100 meter speed result 
+m_runners = [9.63, 9.75, 9.79, 9.80, 9.88, 9.94, 9.98, 11.99]
+
+# Import the numpy package as np
+
+# Create a Numpy array from m_runners: np_m_runners 
+
+# Print out type of np_m_runners
+
+# Print np_m_runners
+np_m_runners=np.array(m_runners)
+print np_m_runners
+type(np_m_runners)
+
+
+# Import numpy
+import numpy as np
+
+height = [76.77,  70.86,  72.83,  70.07,  75.98,  70.07,  70.01, 70.8]
+# Create a Numpy array from height: np_height
+
+np_height=np.array(height)
+# Print out np_height
+print np_height
+# Convert np_height to m: np_height_m
+np_height_m=np_height*0.0254
+# You need to multiply by  0.0254
+
+# Print np_height_m
+print np_height_m
+
+
+
+height = [76.77,  70.86,  72.83,  70.07,  75.98,  70.07,  70.01, 70.8]
+weight = [209.439, 167.551, 182.984, 165.347, 216.053, 163.142, 176.37, 191.802]
+
+
+np_height=np.array(height)
+np_weight=np.array(weight)  
+
+
+
+
+#scrapping
+import requests
+import time
+
+url='https://web.williams.edu/Mathematics/sjmiller/public_html/317/DietProblemData.csv'
+
+data = requests.get(url)
+data_l=data.content.split('\n')
+print(data_l)
+print(data.text)
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

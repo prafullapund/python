@@ -1,0 +1,85 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 13 11:02:15 2017
+
+@author: Prafull
+"""
+import scipy as sp
+sp.random.rand(100)
+from scipy import stats, linalg,integrate
+from scipy.integrate import quad
+dir(stats)
+dir(linalg)
+sp.random.randn(100)
+s=sp.randn(20)
+s.min()
+s.max()
+s.var()
+s.std()
+s.mean()
+n,min_max,mean,var, skew,kurt=stats.describe(s)
+min_max[0]
+skew
+kurt
+
+stats.describe(s)
+
+result = sp.integrate.quad(lambda x: sp.special.jv(2.5,x),0,4.5)
+print result
+
+from math import *
+import scipy as sp
+a=sp.mat('[1 2 5; 4 5 7; 10 8 9]')
+b=sp.mat('[2;3;4]')
+
+import scipy as sp
+a=sp.mat('[1 10 7; 2 4 2; 9 2 8]')
+
+#read file
+
+a=open('/Users/Prafull/Desktop/aa.txt','rU')
+for i in a:
+     print i
+     
+
+
+
+#importing csv
+import csv
+with open('/Users/Prafull/Desktop/Prafulla/Aegis/Machine Learning/Basketball.csv','rb') as csvfile:
+     tr=csv.reader(csvfile)
+     for row in tr:
+          print ','.join(row)
+     
+import os
+
+import urllib2
+
+f=urllib2.urlopen('https://www.facebook.com')
+print f.read(10000)
+
+#Downoad the image 
+from urllib import *
+urlretrieve('https://www.google.co.in')
+urlretrieve("https://lh3.googleusercontent.com/-dzg8bQmoZm8/TjcVeBYcxkE/AAAAAAAABzU/QtAndAuS8YI2Q9wYhUeZdEr3Ouw5O9eAgCEw/w326-h220-p/ProfilePhotos","abc.png")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

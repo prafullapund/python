@@ -1,0 +1,20 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr  3 12:36:03 2017
+
+@author: Prafull
+"""
+
+#create a for loop which will print 500 lines. Odd number of rows should be print numeric values and even number of values should be string values. 
+import string as s
+import numpy as np
+l=list(s.ascii_lowercase)
+num=np.random.rand(60)
+
+for i in range(501):
+     if(i%2==1):
+          print (i)
+     else:
+        print(random.choice(l))  
+

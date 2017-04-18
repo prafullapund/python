@@ -1,0 +1,183 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb  8 00:03:48 2017
+
+@author: Prafull
+"""
+
+python -m pip install --upgrade pip
+#1Series
+import pandas as pd
+import numpy as np
+n1=pd.Series([2,3,4,5,6,7,-6])
+n1
+type(n1)
+
+#2Create series object using meaningful label
+import pandas as pd
+d=[4,5,6,7,8,9]
+index1=['m','t','w','th','fr','sat']
+c=pd.Series(d,index=index1)
+c
+
+
+#3 creating a series from python dictionary
+import pandas as pd
+dict=({'MON':33,'TUE':45,'WED':50,'THU':96,'FRI':87})
+dict
+s1=pd.Series(dict)
+s1
+
+#1Dataframe
+import pandas as pd
+n1=pd.DataFrame([2,3,4,5,6,7,-6])
+n1
+n1.columns=['Data']  #Change Column Name
+n1['NewCol']=6       #Add New Column
+n1['NewCol']=n1['NewCol']+4 
+i=['a','b','c','d','e','f','g']
+n1.index=i
+n1['NewCol2']=n1['Data']
+
+#2
+import pandas as pd
+dates = pd.date_range('20100101', periods = 10, freq = 'M')
+print dates
+df = pd.DataFrame(np.random.randn(10,4), index=dates, columns=list('ABCD'))
+df
+
+#View Data
+df.dtypes
+df.head()
+df.tail()
+df.describe()
+df.T
+df.sort_values(by='B')
+
+#Select Operation
+import pandas as pd
+df = pd.DataFrame(  {'AAA' : [4,5,6,7], 'BBB' : [10,20,30,40],'CCC' : [100,50,-30,-50]}); 
+df
+df.loc[0,:]
+df.loc[0:2,:]
+df.loc[0:2]
+df.loc[:,'AAA']
+df.iloc[:,[0,2]]
+df.iloc[:,0:2]
+df.iloc[0:2,:]
+df.ix[1,'AAA']
+df.ix[0:2,0:2]
+df.columns
+
+#update
+df.loc[1,'AAA']=8
+df
+
+#insert
+df.loc[3]={11,12,13}
+df
+
+#GroupBy
+df = pd.DataFrame({'A' : ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'foo'],
+                   'B' : ['one', 'one', 'two', 'three', 'two', 'two', 'one', 'three'],
+                   'C' : np.random.randn(8), 
+                   'D' : np.random.randn(8)})
+print df
+print df.groupby('A').sum()
+print df.groupby(['A','B']).sum()
+
+
+#Merged and JOined ,Append
+import pandas as pd
+df1=pd.DataFrame({'year':[2001,2002,2003,2004],'Int_rate':[2,3,2,2],'US_GDP':[50,55,65,55]})
+df3=pd.DataFrame({'year':[2001,2003,2004,2005],'UnEmployed':[7,6,5,4],'GDP':[50,52,50,53]})
+merged=pd.merge(df1,df3,on='year',how='inner')
+merged.set_index('year',inplace=True)
+print merged
+
+
+app=df1.append(df3)
+app.set_index('year',inplace=True)
+
+
+# Read CSV
+df2 = pd.read_csv('/Users/Prafull/Desktop/Prafulla/Aegis/Python/train.csv', header=None)
+print df2
+df2.sort_values(1)
+
+
+
+import pandas as pd
+data = pd.Series([1, None, 3.5, None, 7])
+data.dropna()
+data[data.notnull()]
+data.fillna(0)
+data.isnull()
+
+
+
+#2import pandas as pd
+import numpy as np
+import matplotlib as plt
+df = pd.read_csv("/Users/Prafull/Desktop/Prafulla/Aegis/Python/train.csv")
+df
+df.describe()
+df.head()
+df.apply(lambda x: sum(x.isnull()),axis=0) #All null values in each column
+df['LoanAmount'].fillna(df['LoanAmount'].mean(), inplace=True)
+df['Self_Employed'].value_counts()
+df['Self_Employed'].fillna('No',inplace=True)
+df.hist('ApplicantIncome',bins=20)
+#removing outliers- using log
+df['LoanAmount_log']=np.log(df['LoanAmount'])
+df['LoanAmount_log'].hist(bins=20)
+
+df['Gender'].value_counts()
+df['Married'].value_counts()
+df['Education'].value_counts()
+
+import pandas as pd
+df=pd.read_html('http://www.latlong.net/category/cities-102-15.html',header=0)[0]
+df
+df1=df.sort_values('Latitude')
+df2=df.sort_values('Longitude',ascending=False)
+
+import pandas as pd
+import numpy as np
+
+webscrapeurl = "http://www.latlong.net/category/cities-102-15.html"
+
+wsdata = pd.read_html(webscrapeurl,header=0)[0]
+print wsdata
+num = 15
+for i in range(2,num):
+    webscrapeurl1 = "http://www.latlong.net/category/cities-102-15-" + str(i) +".html"
+    print webscrapeurl1
+    wsdata1 = pd.read_html(webscrapeurl1,header=0)[0]
+#    print wsdata1
+    wsdata1 = wsdata1.drop(wsdata1.index[[0]])
+    wsdata = wsdata.append(wsdata1)
+print wsdata
+
+
+from pandas import ExcelWriter
+writer = ExcelWriter('C:/hi/PythonExport.xlsx')
+df.to_excel(writer,'Sheet1')
+df1.to_excel(writer,'Sheet2')
+df2.to_excel(writer,'Sheet3')
+writer.save()
+
+
+
+import pandas as pd
+df=pd.read_html('http://www.latlong.net/category/cities-102-15.html',header=0)[0]
+df
+df1=df.sort_values('Latitude')
+df2=df.sort_values('Longitude',ascending=False)
+
+
+
+
+
+
